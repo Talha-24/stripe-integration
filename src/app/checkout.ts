@@ -10,7 +10,7 @@ export async function checkout(lineItems:STRIPEPRODUCTS[]) {
     
     const getStripe = () => {
         if (!stripepromise) {
-            stripepromise = loadStripe(process.env.NODE_PUBLIC_API_KEY as string);
+            stripepromise = loadStripe(process.env.NEXT_PUBLIC_API_KEY as string);
         }
         return stripepromise;
     }
@@ -19,8 +19,8 @@ export async function checkout(lineItems:STRIPEPRODUCTS[]) {
     await stripe.redirectToCheckout({
         mode: "payment",
         lineItems,
-        successURL: `${window.location.origin}?session_id={CHECKOUT_SESSION_ID}`,
-        cancelURL: window.location.origin,
+        successUrl: `${window.location.origin}?session_id={CHECKOUT_SESSION_ID}`,
+        cancelUrl: window.location.origin,
     })
 
 }
