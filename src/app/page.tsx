@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "@/app/stripe.module.css"
 import { checkout } from "./checkout";
 export default function Home() {
+  // CHECKOUT
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <main className={styles.main}>
@@ -11,8 +12,7 @@ export default function Home() {
           src="/next.svg"
           alt="Next.js logo"
           width={180}
-          height={38}
-          priority
+          height={58}
         />
         <br />
         <br />
